@@ -18,16 +18,16 @@ A simple Java-based backend REST API to track daily expenses by category, with f
 
 ## 🧑‍💻 Tech Stack
 
-| Layer         | Technology             |
-|---------------|------------------------|
-| Language      | Java 21                |
-| Framework     | Spring Boot 3.x        |
-| ORM           | Spring Data JPA        |
-| Security      | Spring Security + JWT  |
-| Database      | PostgreSQL             |
-| Scheduler     | Spring `@Scheduled`    |
-| Build Tool    | Gradle or Maven        |
-| IDE           | IntelliJ IDEA          |
+| Layer         | Technology           |
+|---------------|----------------------|
+| Language      | Java 21              |
+| Framework     | Spring Boot 3.x      |
+| ORM           | Spring Data JPA      |
+| Security      | Spring Security + JWT |
+| Database      | PostgreSQL           |
+| Scheduler     | Spring `@Scheduled`  |
+| Build Tool    | Gradle       |
+| IDE           | IntelliJ IDEA        |
 
 ---
 
