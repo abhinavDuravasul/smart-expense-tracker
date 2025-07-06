@@ -1,4 +1,4 @@
-package com.practise.smart.expense.tracker;
+package com.smart.expense.tracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
