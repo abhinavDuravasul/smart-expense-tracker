@@ -6,7 +6,10 @@ spring:
   jpa:
     show-sql : true
     hibernate:
-     ddl-auto: update
-
+     ddl-auto: none
   profiles:
     active: dev
+server :
+    port: 1239
+    servlet:
+      context-path : /smart-expense-tracker
