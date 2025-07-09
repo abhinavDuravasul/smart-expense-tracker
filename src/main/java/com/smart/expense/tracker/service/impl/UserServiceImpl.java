@@ -6,6 +6,7 @@ import com.smart.expense.tracker.entity.User;
 import com.smart.expense.tracker.repository.UserRepo;
 import com.smart.expense.tracker.service.UserService;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,7 +14,7 @@ import java.util.Set;
 @Service
 public class UserServiceImpl implements UserService {
 
-   // private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     private final UserRepo userRepo;
 
@@ -28,10 +29,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User registerNewUser(UserDto dto) {
         User user = new User();
-        user.setUserName(dto.getUserName());
+        user.setUserName(dto.getUsername());
         user.setEmail(dto.getEmail());
-        user.setPasswordHash((dto.getPassword()));
+        user.setPasswordHash(passwordEncoder.encode(dto.getPassword()));
         user.setRoles(dto.getRoles()!=null ? dto.getRoles() : Set.of(Role.USER));
+        userRepo.save(user);
         return userRepo.save(user);
     }
 }

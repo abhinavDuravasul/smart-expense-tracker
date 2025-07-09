@@ -3,9 +3,12 @@ package com.smart.expense.tracker.controller;
 import com.smart.expense.tracker.dto.UserDto;
 import com.smart.expense.tracker.entity.User;
 import com.smart.expense.tracker.service.UserService;
+import jakarta.annotation.security.PermitAll;
+import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +24,9 @@ public class UserController {
     }
 
 
+    @PermitAll
     @PostMapping("/register")
-    public ResponseEntity<User> register(UserDto userDto){
+    public ResponseEntity<User> register(@Valid @RequestBody UserDto userDto){
        User savedUser = userService.registerNewUser(userDto);
         return ResponseEntity.ok().header("xyz","12345")
                 .body(savedUser);
