@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.5.3'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'checkstyle'
 }
 
 group = 'com.practise'
@@ -19,9 +20,37 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'//main dependency for the server to start and hold on
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation("org.postgresql:postgresql:42.7.7")
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.5.3")
+	implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
+	implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	implementation("org.projectlombok:lombok:1.18.38")
+	annotationProcessor("org.projectlombok:lombok:1.18.38")
+	testImplementation("org.projectlombok:lombok:1.18.38")
+	testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
+	implementation("org.springframework.boot:spring-boot-starter-security:3.5.3")
+	implementation 'org.modelmapper:modelmapper:3.1.1'
 }
+
+checkstyle {
+	toolVersion = '10.12.4'
+	configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+	ignoreFailures = false
+	showViolations = true
+}
+
+tasks.withType(Checkstyle) {
+	reports {
+		xml.required = false
+		html.required = true
+	}
+}
+
 
 tasks.named('test') {
 	useJUnitPlatform()

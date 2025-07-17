@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smart_expense_db
+    username: postgres
+    password: root
+  jpa:
+    show-sql : true
+    hibernate:
+     ddl-auto: none
+  profiles:
+    active: dev
+  security:
+    user:
+      name: myuser
+      password: mypass123
+server :
+    port: 1239
+    servlet:
+      context-path : /smart-expense-tracker
