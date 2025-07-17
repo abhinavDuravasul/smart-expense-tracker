@@ -9,6 +9,10 @@ spring:
      ddl-auto: none
   profiles:
     active: dev
+  security:
+    user:
+      name: myuser
+      password: mypass123
 server :
     port: 1239
     servlet:

@@ -9,7 +9,9 @@ import com.smart.expense.tracker.service.UserService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -35,5 +37,26 @@ public class UserServiceImpl implements UserService {
         user.setRoles(dto.getRoles()!=null ? dto.getRoles() : Set.of(Role.USER));
         userRepo.save(user);
         return userRepo.save(user);
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public List<UserDto> getAllUsers() {
+        List<User> usersList = userRepo.findAll();
+       List<UserDto> userList = usersList.stream()
+               .map(this::convertToDto).collect(Collectors.toList());
+      return  userList;
+    }
+
+
+    private UserDto convertToDto(User user) {
+        UserDto dto = new UserDto();
+        dto.setUsername(user.getUserName());
+        dto.setEmail(user.getEmail());
+        dto.setPassword(null); // Do NOT expose password
+        dto.setRoles(user.getRoles());
+        return dto;
     }
 }

@@ -31,7 +31,7 @@ public class User {
     private Long id;
 
     @NotBlank(message ="UserName is required")
-    @Size(max=18)
+    @Size(max=35)
     @Column(name ="user_name")
     private String userName;
 
@@ -41,7 +41,7 @@ public class User {
     private String passwordHash; // store BCrypt hash, not raw password
 
     @NotBlank(message ="Email Id is required")
-    @Size(max = 20)
+    @Size(max = 30)
     @Email(message ="Must be a valid e-mail address")
     @Column(name= "email_Id")
     private String email;
