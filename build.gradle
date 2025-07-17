@@ -40,9 +40,8 @@ dependencies {
 checkstyle {
 	toolVersion = '10.12.4'
 	configFile = rootProject.file('config/checkstyle/checkstyle.xml')
-//	configProperties = [
-//			'checkstyle.suppressions.file': "${rootDir}/config/checkstyle/suppressions.xml"
-//	]
+	ignoreFailures = false
+	showViolations = true
 }
 
 tasks.withType(Checkstyle) {

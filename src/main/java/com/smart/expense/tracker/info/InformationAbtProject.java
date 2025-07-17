@@ -24,7 +24,11 @@ public class InformationAbtProject {
 
 //“It’s a secure, backend-only REST API that helps users track their personal expenses, categorized by type, with support for reports and authentication.”
 
-//    “The Smart Expense Tracker API is a backend project built in Java using Spring Boot. It allows users to securely manage their daily expenses. Users can sign up, log in with JWT-based authentication, and then add expenses by category, amount, and description. The API supports viewing, editing, and deleting expenses. I also added pagination and filtering features for better UX, and created a scheduled job that generates monthly reports. I used layered architecture with DTOs, services, and JPA repositories, and documented all the APIs with Swagger.
+//    “The Smart Expense Tracker API is a backend project built in Java using Spring Boot.
+//    It allows users to securely manage their daily expenses.
+//    Users can sign up, log in with JWT-based authentication, and then add expenses by category, amount, and description.
+//    The API supports viewing, editing, and deleting expenses. I also added pagination and filtering features for better UX, and created a scheduled job that generates monthly reports.
+//    I used layered architecture with DTOs, services, and JPA repositories, and documented all the APIs with Swagger.
 //    The backend is fully secure and ready to be consumed by any frontend or mobile app.”
 }
 

@@ -30,15 +30,15 @@ public class UserController {
     @PermitAll
     @PostMapping("/register")
     public ResponseEntity<User> register(@Valid @RequestBody UserDto userDto){
-       User savedUser = userService.registerNewUser(userDto);
-        return ResponseEntity.ok().header("xyz","12345")
+        User savedUser = userService.registerNewUser(userDto);
+        return ResponseEntity.ok().header("xyz", "12345")
                 .body(savedUser);
     }
 
     @PermitAll
     @GetMapping("/getAll")
-    public List<UserDto> getAllUsers () {
-       return userService.getAllUsers();
+    public List<UserDto> getAllUsers() {
+        return userService.getAllUsers();
     }
 
 }
