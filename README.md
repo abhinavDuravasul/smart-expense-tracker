@@ -1,6 +1,9 @@
 # 💸 Smart Expense Tracker API
 
-A simple Java-based backend REST API to track daily expenses by category, with features like monthly summaries, JWT authentication, and PostgreSQL database integration. Ideal for personal use and demonstration in job interviews.
+A simple Java-based backend REST API to track daily expenses by category, 
+with features like monthly summaries, JWT authentication, and PostgreSQL 
+database integration.
+Ideal for personal use and demonstration in job interviews.
 
 ---
 
