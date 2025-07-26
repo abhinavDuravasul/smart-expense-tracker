@@ -58,3 +58,25 @@ You must log in and obtain a valid token, then include it in the `Authorization`
 ```bash
 git clone https://github.com/your-username/smart-expense-tracker.git
 cd smart-expense-tracker
+
+
+Smart Expense Tracker API — Personal Project
+Tech Stack: Java 21, Spring Boot 3.x, Spring Security + JWT, Spring Data JPA, PostgreSQL, Gradle
+
+Developed a RESTful backend API to track daily expenses by category, designed for personal use and technical demonstration.
+
+Built clean Controller → Service → Repository architecture
+
+Secured endpoints using JWT-based Spring Security
+
+Integrated PostgreSQL and handled ORM mapping via JPA
+
+Implemented scheduled job with @Scheduled for monthly reports
+
+Enabled full CRUD operations on expenses and summaries
+
+Impact:
+
+Strengthened knowledge of secure API design and modular backend development
+
+Demonstrated ability to build scalable Spring Boot applications from scratch
