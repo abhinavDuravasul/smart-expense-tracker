@@ -9,7 +9,7 @@ public interface ExpenseService {
 
     Expense saveExpense(ExpenseRequest expenseRequest);
 
-   List<Expense> getAllExpenses();
+    List<Expense> getAllExpenses();
 
-   void deleteExpense(Long id);
+    void deleteExpense(Long id);
 }

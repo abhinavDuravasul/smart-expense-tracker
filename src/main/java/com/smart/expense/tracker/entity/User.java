@@ -1,5 +1,7 @@
 package com.smart.expense.tracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -11,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -18,7 +21,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity(name ="exp_users")
@@ -59,4 +64,12 @@ public class User {
     @Column(name= "role")
     private Set<Role> roles = new HashSet<>();
 
+    @OneToMany(mappedBy ="user", cascade= CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Expense> expenses = new ArrayList<>();
+
+//     Quick Rule of Thumb
+//    Use @JsonManagedReference on the parent side (the "one" side in OneToMany).
+//
+//    Use @JsonBackReference on the child side (the "many" side in ManyToOne).
 }

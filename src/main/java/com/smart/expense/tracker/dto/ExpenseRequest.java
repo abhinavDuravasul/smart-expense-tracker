@@ -19,8 +19,8 @@ public class ExpenseRequest {
     private String amount;
 
     private String category;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate date;
 
     @Size(max = 12)

@@ -49,6 +49,13 @@ You must log in and obtain a valid token, then include it in the `Authorization`
 | GET    | `/api/summary/monthly` | Monthly report summary |
 | DELETE | `/api/expenses/{id}` | Delete an expense       |
 
+
+Step	Action	Endpoint	Output
+1	Add a new expense	POST /api/expenses	Expense saved in DB
+2	View all expenses	GET /api/expenses	List of all user expenses
+3	Delete an expense	DELETE /api/expenses/{id}	Expense removed
+4	Get monthly summary	GET /api/summary/monthly	Total spent per month
+5	Scheduled monthly auto-summary	(internal @Scheduled)	Report generated monthly
 ---
 
 ## ⚙️ Getting Started
