@@ -12,13 +12,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-public class SecurityFilterChain {
+public class SecFilterChain {
 //SecurityFilterChain
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final UserDetailsService userDetailsService;
 
-    public SecurityFilterChain(JwtAuthenticationFilter jwtAuthenticationFilter,
-                               UserDetailsService userDetailsService) {
+    public SecFilterChain(JwtAuthenticationFilter jwtAuthenticationFilter,
+                          UserDetailsService userDetailsService) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.userDetailsService = userDetailsService;
     }
