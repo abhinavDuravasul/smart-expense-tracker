@@ -9,8 +9,6 @@ public class AuthRequest {
 
     private String username;
     private String password;
-    // Getters and Setters
-
 
     public static class AuthResponse {
         private String token;
