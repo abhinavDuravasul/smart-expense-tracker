@@ -119,7 +119,8 @@ public class UserRegistrationController {
 //🧠 Final Tips for Resume & Concept Clarity
 //You can say:
 //
-//🔐 Implemented JWT-based stateless authentication using Spring Security, including custom UserDetailsService, JwtAuthenticationFilter, and secure password hashing with BCrypt.
+//🔐 Implemented JWT-based stateless authentication using Spring Security, including custom UserDetailsService,
+// JwtAuthenticationFilter, and secure password hashing with BCrypt.
 //
 //And during interviews, confidently explain:
 //

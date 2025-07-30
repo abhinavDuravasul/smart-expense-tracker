@@ -24,9 +24,10 @@ public class SecFilterChain {
     }
 
     @Bean
-    public org.springframework.security.web.SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public org.springframework.security.web.SecurityFilterChain securityFilterChain(HttpSecurity http)
+            throws Exception {
         return http
-                .csrf(csrf->csrf.disable())
+                .csrf(csrf-> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/register/registration", "/login/user").permitAll()
                         .anyRequest().authenticated()
