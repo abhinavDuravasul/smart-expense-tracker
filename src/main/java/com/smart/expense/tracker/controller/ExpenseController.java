@@ -25,23 +25,22 @@ public class ExpenseController {
     public ExpenseController(ExpenseService expenseService) {
         this.expenseService = expenseService;
     }
-//POST /api/expenses
+       //POST /api/expenses
 
     @PostMapping
-    public ResponseEntity<Expense> addExpense(@Valid @RequestBody ExpenseRequest request){
-       Expense  savedExpense = expenseService.saveExpense(request);
-       return new ResponseEntity<>(savedExpense, HttpStatus.CREATED);
+        public ResponseEntity<Expense> addExpense(@Valid @RequestBody ExpenseRequest request){
+        Expense  savedExpense = expenseService.saveExpense(request);
+        return new ResponseEntity<>(savedExpense, HttpStatus.CREATED);
     }
 
     @GetMapping("/getall")
-
     public ResponseEntity<List<Expense>> getAllExpenses(){
-       return ResponseEntity.ok(expenseService.getAllExpenses());
+        return ResponseEntity.ok(expenseService.getAllExpenses());
     }
 
     @DeleteMapping("/delete/{id}")
         public ResponseEntity<Void> deleteExpense(@PathVariable Long id){
         expenseService.deleteExpense(id);
-       return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build();
     }
 }
