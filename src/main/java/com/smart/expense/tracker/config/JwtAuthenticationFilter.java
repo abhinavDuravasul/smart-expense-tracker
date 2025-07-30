@@ -16,7 +16,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 @Component
 public class JwtAuthenticationFilter  extends OncePerRequestFilter {
-
+// JWT custom filter: JwtAuthenticationFilter
+    //	Validates JWT in every request
     private final JwtUtil jwtUtil;
     private final UserDetailsService userDetailsService;
 
