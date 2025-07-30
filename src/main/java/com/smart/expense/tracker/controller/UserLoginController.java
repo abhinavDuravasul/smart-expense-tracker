@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/login")
-public class AuthController {
+public class UserLoginController {
 
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
+    public UserLoginController(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
         this.authenticationManager = authenticationManager;
         this.jwtUtil = jwtUtil;
     }
@@ -35,13 +35,12 @@ public class AuthController {
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
             String token = jwtUtil.generateToken((UserDetails) authentication.getPrincipal());
+            System.out.println("token generated for new-user is: "+authRequest.getUsername()+ "is:"+token);
             return ResponseEntity.ok(new AuthRequest.AuthResponse(token));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
-
-
 }
 
 
