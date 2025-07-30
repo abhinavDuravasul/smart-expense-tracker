@@ -4,16 +4,15 @@ spring:
     username: postgres
     password: root
   jpa:
-    show-sql : true
+    show-sql: true
     hibernate:
-     ddl-auto: none
+      ddl-auto: none
   profiles:
     active: dev
-  security:
-    user:
-      name: myuser
-      password: mypass123
-server :
-    port: 1239
-    servlet:
-      context-path : /smart-expense-tracker
+
+server:
+  port: 1239
+  servlet:
+    context-path: /smart-expense-tracker
+secure:
+  token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZXd1c2VyIiwiaWF0IjoxNzUzMTkxNDQ1LCJleHAiOjE3NTMyMjc0NDV9.Wc_6EzlX3MQOaSdn--IegS4ZzjDpEggRgpBFnOMOy60
