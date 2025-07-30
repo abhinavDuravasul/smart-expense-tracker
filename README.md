@@ -98,9 +98,7 @@ The system finds and deletes that expense (if it belongs to the user)
 4. User Views Monthly Summary
 The user sends a GET request to /api/summary/monthly
 
-The system:
-
-Groups expenses by month and year
+The system: Groups expenses by month and year
 
 Aggregates the total spending for each month
 
@@ -111,9 +109,7 @@ Optionally breaks it down by category
 5. Automated Monthly Report (Optional Feature)
 A scheduled job runs on the 1st of every month.
 
-It:
-
-Aggregates the total expenses for the previous month
+It:Aggregates the total expenses for the previous month
 
 Sends a summary to the user (could be email or just logs for now)
 
@@ -127,26 +123,8 @@ Step	Action	Endpoint	Output
 4	Get monthly summary	GET /api/summary/monthly	Total spent per month
 5	Scheduled monthly auto-summary	(internal @Scheduled)	Report generated monthly
 
-Let me know if you want a visual flowchart or database diagram too.
-
-
-
-
-
-
-
-
-You said:
-Let me know if you want a visual flowchart or database diagram too.
-
-
-ChatGPT said:
-Great! Since you're working on the expense part now, here are two helpful visual aids you can use:
-
 📊 1. Visual Flowchart – Smart Expense Flow (excluding authentication)
-plaintext
-Copy
-Edit
+
 ┌───────────────┐
 │ Start (User)  │
 └──────┬────────┘
